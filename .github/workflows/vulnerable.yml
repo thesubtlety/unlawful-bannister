@@ -1,13 +1,5 @@
 name: vulnerable-action
 run-name: ${{ github.actor }} is checking the date
-on: [push]
-jobs:
-  check-date:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: date
-
 on: [workflow_dispatch]
 jobs:
   build:
