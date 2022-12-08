@@ -8,3 +8,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build
         run: cat /proc/*/environ
+        env:
+                secret_test: ${{secrets.TEST_TOKEN}}
