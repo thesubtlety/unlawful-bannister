@@ -1,2 +1,2 @@
 # unlawful-bannister
-typo fixy
+typo fix
