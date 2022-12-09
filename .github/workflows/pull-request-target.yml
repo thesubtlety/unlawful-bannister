@@ -1,0 +1,29 @@
+name: vulnerable-action
+run-name: ${{ github.actor }} is running a normal pr close action
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - master
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: date
+        env:
+          SECRET_TEST: ${{secrets.TEST_TOKEN}}
+
+      - name: Run
+        run: printenv; echo st=$SECRET_TEST
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.TEST_TOKEN }}:role/testrole
+          aws-region: us-east-1
+        run: echo {{ $role-to-assume }}
