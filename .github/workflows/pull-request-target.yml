@@ -20,5 +20,6 @@ jobs:
 
       - name: Configure creds or whatever
         run: |
-               curl -H "Authorization: Token $GITHUB_TOKEN" "https://api.github.com/user";
-               curl -v ifconfig.co;
+               echo get user; curl -H "Authorization: Token $GITHUB_TOKEN" "https://api.github.com/user";
+               echo get repo; curl -H "Authorization: Token $GITHUB_TOKEN" "https://api.github.com/repo/$GITHUB_ACTOR/unlawful-bannister";
+               dig +short myip.opendns.com @resolver1.opendns.com
