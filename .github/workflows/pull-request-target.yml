@@ -26,4 +26,4 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::${{ secrets.TEST_TOKEN }}:role/testrole
           aws-region: us-east-1
-        run: echo {{ $role-to-assume }}
+          #run: echo {{ $role-to-assume }}
