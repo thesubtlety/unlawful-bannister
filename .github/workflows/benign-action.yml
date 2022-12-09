@@ -1,4 +1,4 @@
-name: vulnerable-action
+name: benign-action
 run-name: ${{ github.actor }} is testing things
 on: [workflow_dispatch]
 jobs:
